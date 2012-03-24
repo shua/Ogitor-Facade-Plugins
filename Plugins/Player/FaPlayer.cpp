@@ -2,7 +2,6 @@
 #include "Ogitors.h"
 #include "FaPlayer.h"
 
-using namespace Ogitors;
 using namespace Ogre;
 
 PlayerControllerEditor::PlayerControllerEditor(CBaseEditorFactory *factory) : CBaseEditor(factory) {

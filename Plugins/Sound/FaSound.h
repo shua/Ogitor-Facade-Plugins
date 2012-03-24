@@ -78,4 +78,6 @@ public:
 
 extern "C" bool PluginExport dllStartPlugin(void *identifier, Ogre::String& name);
 
+extern "C" bool PluginExport dllGetPluginName(Ogre::String& name);
+
 extern "C" bool PluginExport dllStopPlugin(void);

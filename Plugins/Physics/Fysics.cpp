@@ -263,19 +263,21 @@ Ogre::String FysicsEditorFactory::GetPlaceHolderName()
     return "Fysics.mesh";
 }
 /////////////////////////////////////////////////////////////////////////
-FysicsEditorFactory *fysicsFac = 0;
 
 bool dllStartPlugin(void *identifier, Ogre::String& name)
 {
     name = "Fysics Object";
-    fysicsFac = OGRE_NEW FysicsEditorFactory();
-    OgitorsRoot::getSingletonPtr()->RegisterEditorFactory(identifier, fysicsFac);
+    OgitorsRoot::getSingletonPtr()->RegisterEditorFactory(identifier, OGRE_NEW FysicsEditorFactory());
+    return true;
+}
+
+bool dllGetPluginName(Ogre::String& name)
+{
+    name = "Fysics Object";
     return true;
 }
 
 bool dllStopPlugin(void)
 {
-    OGRE_DELETE fysicsFac;
-    fysicsFac = 0;
     return true;
 }

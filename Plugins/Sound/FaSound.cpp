@@ -236,19 +236,21 @@ Ogre::String FaSoundEditorFactory::GetPlaceHolderName()
     return "FaSound.mesh";
 }
 /////////////////////////////////////////////////////////////////////////
-FaSoundEditorFactory *fasoundFac = 0;
 
 bool dllStartPlugin(void *identifier, Ogre::String& name)
 {
     name = "FaSound Object";
-    fasoundFac = OGRE_NEW FaSoundEditorFactory();
-    OgitorsRoot::getSingletonPtr()->RegisterEditorFactory(identifier, fasoundFac);
+    OgitorsRoot::getSingletonPtr()->RegisterEditorFactory(identifier, OGRE_NEW FaSoundEditorFactory());
+    return true;
+}
+
+bool dllGetPluginName(Ogre::String& name)
+{
+    name = "FaSound Object";
     return true;
 }
 
 bool dllStopPlugin(void)
 {
-    OGRE_DELETE fasoundFac;
-    fasoundFac = 0;
     return true;
 }
