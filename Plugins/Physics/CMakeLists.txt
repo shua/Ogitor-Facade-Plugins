@@ -14,7 +14,7 @@ include_directories(.)
 
 add_library(PhysicsPlugin SHARED ${HEADER_FILES} ${SOURCE_FILES})
 
-set(LIBRARY_OUTPUT_PATH ../lib)
+set(LIBRARY_OUTPUT_PATH ${PLUGINS_OUTPUT_DIR})
 
 set_target_properties(PhysicsPlugin PROPERTIES COMPILE_DEFINITIONS PLUGIN_EXPORT)
 set_target_properties(PhysicsPlugin PROPERTIES SOLUTION_FOLDER Plugins)

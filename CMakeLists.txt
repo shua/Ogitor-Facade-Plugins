@@ -16,6 +16,10 @@ if(NOT DEFINED OGITOR_INCLUDE_DIRS)
     endif()
 endif()
 
+if(NOT DEFINED PLUGINS_OUTPUT_DIR) 
+    set(PLUGINS_OUTPUT_DIR "${PROJECT_SOURCE_DIR}/Libraries")
+endif()
+
 include_directories(${OGRE_INCLUDE_DIRS})
 include_directories(${OGITOR_INCLUDE_DIRS})
 
